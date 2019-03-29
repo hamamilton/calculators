@@ -1,10 +1,19 @@
 {
-  "name": "react",
-  "version": "0.0.0",
-  "private": true,
+  "name": "mdb-react-admin-template",
+  "version": "1.0.0",
+  "description": "MDB - React Admin Dashboard Free",
+  "author": "MDBootstrap <support@mdbootstrap.com>",
+  "license": "MIT",
   "dependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "formik": "^1.5.1",
+    "google-map-react": "^1.0.6",
+    "mdbreact": "git+https://oauth2:_N5zrzJCPuUUd-v8Y4tf@git.mdbootstrap.com/mdb/react/re-pro.git",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-modal": "^3.8.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.5",
+    "yup": "^0.26.10"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -12,7 +21,10 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "devDependencies": {
-    "react-scripts": "latest"
-  }
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
