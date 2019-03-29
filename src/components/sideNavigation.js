@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "../assets/DMlogo.png";
+//import logo from "../assets/DMlogo.png";
 import { MDBListGroup, MDBListGroupItem, MDBIcon } from 'mdbreact';
 import { NavLink } from 'react-router-dom';
 import ModalPage from './pages/sections/ModalSection';
@@ -8,7 +8,7 @@ const TopNavigation = () => {
     return (
         <div className="sidebar-fixed position-fixed">
             <a href="https://www.datamasterusa.com" className="logo-wrapper waves-effect">
-                <img alt="DataMaster Logo" className="img-fluid" src={logo}/>
+                <img alt="DataMaster Logo" className="img-fluid" src={"https://www.datamasterusa.com/wp-content/uploads/2017/05/web-logo.png"}/>
             </a>
             <MDBListGroup className="list-group-flush">
                 <NavLink exact={true} to="/" activeClassName="activeClass">

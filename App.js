@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Routes from '../src/components/Routes';
+import Routes from './src/components/Routes';
 //import TopNavigation from './components/topNavigation';
-import SideNavigation from './components/sideNavigation';
-import Footer from './components/Footer';
+import SideNavigation from './src/components/sideNavigation';
+import Footer from './src/components/Footer';
 import './index.css';
 
 
