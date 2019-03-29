@@ -1,26 +1,15 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import Hello from './Hello';
-import './style.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
+import './index.css';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: 'React'
-    };
-  }
+ReactDOM.render(<Router><App /></Router>, document.getElementById('root'));
+registerServiceWorker();
 
-  render() {
-    return (
-      <div>
-        <Hello name={this.state.name} />
-        <p>
-          Start editing to see some magic happen :)
-        </p>
-      </div>
-    );
-  }
-}
 
-render(<App />, document.getElementById('root'));
+
