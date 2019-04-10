@@ -16,32 +16,23 @@ class GLAInputForm extends React.Component {
   getSubjectInfo = () => {
     var GLASubject = [];
     
-    GLASubject.push({
-      QualityRating: this.state.QualityRating,
-      ConstructionType: this.state.ConstructionType,
-      CostNES: this.state.CostNES,
-      ConditionRating: this.state.ConditionRating,
-      EffectiveAge: this.state.EffectiveAge,
-      LifeExpectancy: this.stage.LifeExpectancy
-    });
+  changeHandler(event) {
+    let FieldName = event.target.name;
+    let FieldValue = event.target.value;
+    this.setState({[FieldName]:FieldValue});
+}
     var Depreciation = this.EffectiveAge.value/this.LifeExpectancy.value;
     alert(Depreciation)
   };
 
-  changeHandler = inputName => value => {
-   const nextValue = value;
-    this.setState({ 
-      [inputName]: nextValue 
-    });
-  };
-
   render () {
+  
   return (
         <div>
             <div className="grey-text">
             <MDBSelect 
               name="QualityRating" 
-              onChange={this.changeHandler}>
+              onChange={this.changeHandler.bind(this)}>
               <MDBSelectInput selected="Choose the quality rating" />
               <MDBSelectOptions search>
                 <MDBSelectOption value="" disabled selected>Choose the quality rating</MDBSelectOption>
@@ -61,7 +52,7 @@ class GLAInputForm extends React.Component {
                 validate
                 error="wrong"
                 success="right"
-                onChange={this.changeHandler("ConstructionType")}
+                onChange={this.changeHandler.bind("ConstructionType")}
               />
               <MDBInput
                 label="Cost New-Entire Structure"
@@ -72,9 +63,9 @@ class GLAInputForm extends React.Component {
                 success="right"
                 id="inputCostNewEntireStructure"
                 name="CostNES"
-                getValue={this.changeHandler("CostNES")}
+                getValue={this.changeHandler.bind("CostNES")}
               />
-              <MDBSelect name="ConditionRating" getValue={this.changeHandler("ConditionRating")}>
+              <MDBSelect name="ConditionRating" getValue={changeHandler("ConditionRating")}>
               <MDBSelectInput selected="Choose the condition rating" />
               <MDBSelectOptions search>
                 <MDBSelectOption value="" disabled selected>Choose the condition rating</MDBSelectOption>
@@ -94,7 +85,7 @@ class GLAInputForm extends React.Component {
                 error="wrong"
                 success="right"
                 name="EffectiveAge"
-                getValue={this.changeHandler("EffectiveAge")}
+                getValue={this.changeHandler.bind("EffectiveAge")}
               />
               <MDBInput
                 label="Total Life Expectancy"
@@ -104,7 +95,7 @@ class GLAInputForm extends React.Component {
                 error="wrong"
                 success="right"
                 name="LifeExpectancy"
-                getValue={this.changeHandler("LifeExpectancy")}
+                getValue={this.changeHandler.bind("LifeExpectancy")}
               />
             </div>
             <div className="text-center">
@@ -114,10 +105,10 @@ class GLAInputForm extends React.Component {
               }}
               >Calculate</MDBBtn>
             </div>
-        
         </div>
   );
-}}
+}
+}
 
 
 export default GLAInputForm;

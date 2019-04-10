@@ -1,6 +1,6 @@
 import React from 'react'
-import { MDBCard, MDBCol, MDBRow, MDBView, MDBMask, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBIcon, } from 'mdbreact';
-//import GLAInput from "./sections/GLAInputForm.js";
+import { MDBCard, MDBCol, MDBRow, MDBView, MDBMask, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBIcon, MDBSelect, } from 'mdbreact';
+import GLAInputForm from "./sections/GLAInputForm";
 import CalculationForm from "./sections/CalculationForm.js";
 import Comparables from "./sections/ComparablesSection.js";
 
@@ -19,6 +19,8 @@ const ProfilePage = (props) => {
               <MDBCardTitle className="font-bold mb-3">
                     <strong>Subject Information</strong>
                   </MDBCardTitle>
+                  Is this the subject?
+                  <ModalPage />
                 </MDBCardBody>
               </MDBCard>
             </MDBCol>
