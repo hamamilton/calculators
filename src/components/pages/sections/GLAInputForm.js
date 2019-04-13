@@ -1,5 +1,6 @@
 import React from 'react';
 import { MDBBtn, MDBInput, MDBSelect, MDBSelectInput, MDBSelectOptions, MDBSelectOption } from 'mdbreact';
+import QualitySelect from "./pro/Select.js";
 //import QualitySelect from '../../QualitySelect';
 
 class GLAInputForm extends React.Component {
@@ -24,13 +25,7 @@ class GLAInputForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-          <MDBInput 
-          type="text" 
-          value={this.state.value} 
-          onChange={this.handleChange} 
-          label="Quality Rating"
-          name="qualityRating"
-          />
+          <QualitySelect />
           <MDBInput 
           type="text" 
           value={this.state.value} 
