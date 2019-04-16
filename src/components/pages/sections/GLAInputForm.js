@@ -1,77 +1,73 @@
-import React from 'react';
-import { MDBBtn, MDBInput, MDBSelect, MDBSelectInput, MDBSelectOptions, MDBSelectOption } from 'mdbreact';
-import QualitySelect from "./pro/Select.js";
-//import QualitySelect from '../../QualitySelect';
+import React, { Component } from 'react'
+import { MDBSelect, MDBSelectInput, MDBSelectOptions, MDBSelectOption, MDBInput } from "mdbreact"
 
-class GLAInputForm extends React.Component {
-  
-  constructor(props) {
-    super(props);
-    this.state = {value: ''};
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+class Subject extends Component {
+  state = {
+    properties: [{
+      qualityRating: "",
+      constructionType: "",
+      costNewEntireStructure: "",
+      conditionRating: "",
+      effectiveAge: "",
+      totalLifeExpectancy: "",
+      straightLineDepreciation: ""
+    }]
   }
-
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
-  }
-
-  render() {
+    handleChange = (e) => {
+      if (["qualityRating", "constructionType", "costNewEntireStructure", "conditionRating", "effectiveAge", "totalLifeExpectancy"].includes(e.target.className) ) {
+        let properties = [...this.state.properties]   
+        properties[e.target.dataset.id][e.target.className] = e.target.value
+        this.setState({ properties }, () => console.log(this.state.properties))
+        } else {
+        this.setState({ [e.target.name]: e.target.value })
+      }
+    }
+    handleSubmit = (e) => { e.preventDefault() }
+  render () {
+    let {properties} = this.state
     return (
-      <form onSubmit={this.handleSubmit}>
-          <QualitySelect />
+      <div className="subject">
+        <form onChange={this.handleChange}>
           <MDBInput 
           type="text" 
-          value={this.state.value} 
-          onChange={this.handleChange} 
+          label="Quality Rating"
+          name="qualityRating"
+          />
+          <MDBInput 
+          type="text"
           label="Construction Type"
           name="constructionType"
           />
           <MDBInput 
-          type="text" 
-          value={this.state.value} 
-          onChange={this.handleChange} 
+          type="number"
           label="Cost New (Entire Structure)"
           name="costNewEntireStructure"
           />
           <MDBInput 
-          type="text" 
-          value={this.state.value} 
-          onChange={this.handleChange} 
+          type="text"
           label="Condition Rating"
           name="conditionRating"
           />
           <MDBInput 
-          type="text" 
-          value={this.state.value} 
-          onChange={this.handleChange} 
+          type="number" 
           label="Effective Age"
           name="effectiveAge"
           />
           <MDBInput 
-          type="text" 
-          value={this.state.value} 
-          onChange={this.handleChange} 
+          type="number"
           label="Total Life Expectancy"
           name="totalLifeExpectancy"
           />
           <MDBInput 
-          type="text" 
-          value={this.state.value} 
-          onChange={this.handleChange} 
+          type="number" 
           label="Straight Line Depreciation"
           name="straightLineDepreciation"
           />
-        <MDBBtn type="submit" value="Submit" />
-      </form>
-    );
+          <button>Do It</button>
+        </form>
+      </div>
+    )
   }
 }
 
-export default GLAInputForm;
+export default Subject
