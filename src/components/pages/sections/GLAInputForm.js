@@ -70,4 +70,8 @@ class Subject extends Component {
   }
 }
 
+<<<<<<< HEAD
 export default Subject
+=======
+export default Subject
+>>>>>>> c6980f6a2341457145f75d78d815bb3a8e091fa5
