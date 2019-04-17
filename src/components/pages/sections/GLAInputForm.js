@@ -10,15 +10,13 @@ class Subject extends Component {
       constructionType: '',
       costNewEntireStructure: '',
       conditionRating: '',
-      effectiveAge: 0,
-      totalLifeExpectancy: 5,
+      effectiveAge: '',
+      totalLifeExpectancy: '',
       straightLineDepreciation: ''
     }
     this.handleChange = this.handleInputChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-    let _EffectiveAge = this.state.effectiveAge.value
-    let _LifeExpectancy = this.state.totalLifeExpectancy.value
-    let _StraightLineDepreciation = this.state.straightLineDepreciation.value
+    this.handleCalculations = this.handleCalculations.bind(this)
     
   }
   
@@ -30,11 +28,17 @@ class Subject extends Component {
     this.setState({
       [name]: value
     })
-    console.log('Change detected. State updated' + name + ' = ' + value)
+    console.log(this.state)
   }
 
   handleCalculations(event) {
-    {LifeExpectancy !== 0 ? _StraightLineDepreciation = (_LifeExpectancy / _EffectiveAge) : alert('You cannot divide by 0!')}
+    let calcEffectiveAge = parseInt(this.state.effectiveAge)
+    let calcLifeExpectancy = parseInt(this.state.totalLifeExpectancy)
+    let calcStraightLineDepreciation = parseInt(this.state.straightLineDepreciation)
+    {calcLifeExpectancy !== 0 ? calcStraightLineDepreciation = (calcEffectiveAge / calcLifeExpectancy) * 100 : alert('You cannot divide by 0!')}
+    this.setState({
+      straightLineDepreciation: calcStraightLineDepreciation.toFixed(2)
+    })
   }
 
   handleSubmit(event) {
@@ -74,6 +78,7 @@ class Subject extends Component {
           label="Effective Age"
           name="effectiveAge"
           onChange={this.handleChange}
+          inputType = "number"
           />
           <MDBInput 
           type="number"
@@ -81,18 +86,20 @@ class Subject extends Component {
           name="totalLifeExpectancy"
           onChange={this.handleChange}
           onBlur={this.handleCalculations}
+          inputType="number"
           />
           <MDBInput 
-          type="number" 
+          type="number"
           label="Straight Line Depreciation"
           name="straightLineDepreciation"
-          onChange={this.handleChange}
+          value={this.state.straightLineDepreciation}
           />
           <button>Do It</button>
         </form>
       </div>
     )
   }
+  
 }
 
 export default Subject
