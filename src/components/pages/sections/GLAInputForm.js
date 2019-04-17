@@ -17,6 +17,9 @@ class Subject extends Component {
     this.handleChange = this.handleInputChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     let _EffectiveAge = this.state.effectiveAge.value
+    let _LifeExpectancy = this.state.totalLifeExpectancy.value
+    let _StraightLineDepreciation = this.state.straightLineDepreciation.value
+    
   }
   
   handleInputChange(event) {
