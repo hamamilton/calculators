@@ -1,67 +1,89 @@
 import React, { Component } from 'react'
-import { MDBSelect, MDBSelectInput, MDBSelectOptions, MDBSelectOption, MDBInput } from "mdbreact"
+import { MDBSelect, MDBSelectInput, MDBSelectOptions, MDBSelectOption, MDBInput, MDBButton } from "mdbreact"
+import { computeValue, Multiple, Divide } from 'react-real-math'
 
 class Subject extends Component {
-  state = {
-    properties: [{
-      qualityRating: "",
-      constructionType: "",
-      costNewEntireStructure: "",
-      conditionRating: "",
-      effectiveAge: "",
-      totalLifeExpectancy: "",
-      straightLineDepreciation: ""
-    }]
-  }
-    handleChange = (e) => {
-      if (["qualityRating", "constructionType", "costNewEntireStructure", "conditionRating", "effectiveAge", "totalLifeExpectancy"].includes(e.target.className) ) {
-        let properties = [...this.state.properties]   
-        properties[e.target.dataset.id][e.target.className] = e.target.value
-        this.setState({ properties }, () => console.log(this.state.properties))
-        } else {
-        this.setState({ [e.target.name]: e.target.value })
-      }
+  constructor (props) {
+    super(props)
+    this.state = {
+      qualityRating: '',
+      constructionType: '',
+      costNewEntireStructure: '',
+      conditionRating: '',
+      effectiveAge: 0,
+      totalLifeExpectancy: 5,
+      straightLineDepreciation: ''
     }
-    handleSubmit = (e) => { e.preventDefault() }
+    this.handleChange = this.handleInputChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    let _EffectiveAge = this.state.effectiveAge.value
+  }
+  
+  handleInputChange(event) {
+    const target = event.target
+    const value = target.type === 'checkbox' ? target.checked : target.value
+    const name = target.name
+    
+    this.setState({
+      [name]: value
+    })
+    console.log('Change detected. State updated' + name + ' = ' + value)
+  }
+
+  handleCalculations(event) {
+    {LifeExpectancy !== 0 ? _StraightLineDepreciation = (_LifeExpectancy / _EffectiveAge) : alert('You cannot divide by 0!')}
+  }
+
+  handleSubmit(event) {
+    alert('A form was submitted: ' + this.state.qualityRating + ' // ' + this.state.constructionType)
+    event.preventDefault()
+  }
   render () {
-    let {properties} = this.state
     return (
       <div className="subject">
-        <form onChange={this.handleChange}>
+        <form onSubmit={this.handleSubmit}>
           <MDBInput 
           type="text" 
           label="Quality Rating"
           name="qualityRating"
+          onChange={this.handleChange}
           />
           <MDBInput 
           type="text"
           label="Construction Type"
           name="constructionType"
+          onChange={this.handleChange}
           />
           <MDBInput 
           type="number"
           label="Cost New (Entire Structure)"
           name="costNewEntireStructure"
+          onChange={this.handleChange}
           />
           <MDBInput 
           type="text"
           label="Condition Rating"
           name="conditionRating"
+          onChange={this.handleChange}
           />
           <MDBInput 
           type="number" 
           label="Effective Age"
           name="effectiveAge"
+          onChange={this.handleChange}
           />
           <MDBInput 
           type="number"
           label="Total Life Expectancy"
           name="totalLifeExpectancy"
+          onChange={this.handleChange}
+          onBlur={this.handleCalculations}
           />
           <MDBInput 
           type="number" 
           label="Straight Line Depreciation"
           name="straightLineDepreciation"
+          onChange={this.handleChange}
           />
           <button>Do It</button>
         </form>
