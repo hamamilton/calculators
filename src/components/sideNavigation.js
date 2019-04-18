@@ -1,5 +1,5 @@
 import React from 'react';
-//import logo from "../assets/mdb-react.png";
+//import logo from ;
 import { MDBListGroup, MDBListGroupItem, MDBIcon } from 'mdbreact';
 import { NavLink } from 'react-router-dom';
 
@@ -7,7 +7,7 @@ const TopNavigation = () => {
     return (
         <div className="sidebar-fixed position-fixed">
             <a href="#!" className="logo-wrapper waves-effect">
-                <img alt="MDB React Logo" className="img-fluid" src={}/>
+                <img alt="DataMaster Logo" className="img-fluid" src={'https://www.datamasterusa.com/wp-content/uploads/2017/05/web-logo.png'}/>
             </a>
             <MDBListGroup className="list-group-flush">
                 <NavLink exact={true} to="/" activeClassName="activeClass">
