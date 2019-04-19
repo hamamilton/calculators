@@ -75,6 +75,13 @@ class Subject extends Component {
           />
           <MDBInput 
           type="number" 
+          label="Subject GLA"
+          name="subj"
+          onChange={this.handleChange}
+          inputType = "number"
+          />
+          <MDBInput 
+          type="number" 
           label="Effective Age"
           name="effectiveAge"
           onChange={this.handleChange}
