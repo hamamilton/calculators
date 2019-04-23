@@ -28,10 +28,10 @@ const TopNavigation = () => {
                         Tables
                     </MDBListGroupItem>
                 </NavLink>
-                <NavLink to="/maps" activeClassName="activeClass">
+                <NavLink to="/sensitivity" activeClassName="activeClass">
                     <MDBListGroupItem>
                         <MDBIcon icon="map" className="mr-3"/>
-                        Maps
+                        Sensitivity Analysis
                     </MDBListGroupItem>
                 </NavLink>
                 <NavLink to="/404" activeClassName="activeClass">
