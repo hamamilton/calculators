@@ -1,5 +1,7 @@
 import React from 'react'
 import { MDBRow, MDBCol, MDBView, MDBCard, MDBCardBody, MDBTable, MDBTableHead, MDBTableBody, MDBInput } from 'mdbreact';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee, spinner } from '@fortawesome/free-solid-svg-icons'
 
 const Sensitivity =  () => {
   return (
@@ -14,146 +16,166 @@ const Sensitivity =  () => {
             <MDBInput
               name="subjectContractPrice"
               type="number"
-              icon="dollar-sign"
               label="Subject Contract Price"
             />
-            
-            <p>Using the most basic table markup, here’s how .table-based tables look in Bootstrap. All table styles are inherited in Bootstrap 4, meaning any nested tables will be styled in the same manner as the parent.</p>
-            <MDBTable>
-              <MDBTableHead>
+            <MDBTable striped hover>
+              <MDBTableHead color="secondary-color" textWhite>
                 <tr>
                   <th>&nbsp;</th>
                   <th>Indicated Value Spread (Comps 1-3)</th>
-                  <th>Comp 1 (In Subject Project)</th>
-                  <th>Comp 2 (In Subject Project)</th>
-                  <th>Comp 3 (In Subject Project)</th>
-                  <th>Comp 4 (In Competing Project)</th>
-                  <th>Comp 5 (In Competing Project)</th>
-                  <th>Indicated Value Spread (Comps 4-5)</th>
+                  <th>Comp 1 (In Subject Project)
+                    </th>
+                  <th>Comp 2 (In Subject Project)
+                    
+                    </th>
+                  <th>Comp 3 (In Subject Project)
+                    
+                    </th>
+                  <th>Comp 4 (In Competing Project)
+                    
+                    </th>
+                  <th>Comp 5 (In Competing Project)
+                    
+                    </th>
+                  <th>Indicated Value Spread (All Comps)</th>
                   <th>Average (Subject Project)</th>
                   <th>Average (All Areas)</th>
                 </tr>
               </MDBTableHead>
               <MDBTableBody>
-                <tr>
-                  <td colspan="2">Actual Sales Price</td>
-                  <td><MDBInput /></td>
-                  <td><MDBInput /></td>
-                  <td><MDBInput /></td>
-                  <td><MDBInput /></td>
-                  <td><MDBInput /></td>
+              <tr>
+                  <td>Actual Sales Price</td>
                   <td></td>
+                  <td><MDBInput 
+                    name="comp1GLA"
+                    type="number"
+                    label="Comp 1 GLA"
+                    /></td>
+                  <td><MDBInput 
+                    name="comp2GLA"
+                    type="number"
+                    label="Comp 2 GLA"
+                    /></td>
+                  <td><MDBInput 
+                    name="comp3GLA"
+                    type="number"
+                    label="Comp 3 GLA"
+                    /></td>
+                  <td><MDBInput 
+                    name="comp4GLA"
+                    type="number"
+                    label="Comp 4 GLA"
+                    /></td>
+                  <td><MDBInput 
+                    name="comp5GLA"
+                    type="number"
+                    label="Comp 5 GLA"
+                    /></td>
                   <td></td>
-                  <td></td>
+                  <td id="avgSubjectProject1Actual"></td>
+                  <td id="avgAllAreasActual"></td>
                 </tr>
                 <tr>
                   <td>Actual Sales Price</td>
-                  <td>Indicated Value Spread (Comps 1-3)</td>
-                  <td>Comp 1 (In Subject Project)</td>
-                  <td>Comp 2 (In Subject Project)</td>
-                  <td>Comp 3 (In Subject Project)</td>
-                  <td>Comp 4 (In Competing Project)</td>
-                  <td>Comp 5 (In Competing Project)</td>
-                  <td>Indicated Value Spread (Comps 4-5)</td>
-                  <td>Average (Subject Project)</td>
-                  <td>Average (All Areas)</td>
+                  <td></td>
+                  <td><MDBInput
+                    name="comp1ActualSalePrice"
+                    type="number"
+                    label="Comp 1 Actual" /></td>
+                  <td><MDBInput
+                    name="comp2ActualSalePrice"
+                    type="number"
+                    label="Comp 2 Actual" /></td>
+                  <td><MDBInput
+                    name="comp3ActualSalePrice"
+                    type="number"
+                    label="Comp 3 Actual" /></td>
+                  <td><MDBInput
+                    name="comp4ActualSalePrice"
+                    type="number"
+                    label="Comp 4 Actual" /></td>
+                  <td><MDBInput
+                    name="comp5ActualSalePrice"
+                    type="number"
+                    label="Comp 5 Actual" /></td>
+                  <td></td>
+                  <td id="avgSubjectProject1Actual"></td>
+                  <td id="avgAllAreasActual"></td>
+                </tr>
+                <tr>
+                  <td>Indicated Value $25/sf</td>
+                  <td id="subProjectSpread1"></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td id="compProjectSpread1"></td>
+                  <td id="avgSubjectProject1"></td>
+                  <td id="avgAllAreas1"></td>
+                </tr>
+                <tr>
+                  <td>Indicated Value $35/sf</td>
+                  <td id="subProjectSpread2"></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td id="compProjectSpread2"></td>
+                  <td id="avgSubjectProject2"></td>
+                  <td id="avgAllAreas2"></td>
+                </tr>
+                <tr>
+                  <td>Indicated Value $40/sf</td>
+                  <td id="subProjectSpread3"></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td id="compProjectSpread3"></td>
+                  <td id="avgSubjectProject3"></td>
+                  <td id="avgAllAreas3"></td>
+                </tr>
+                <tr>
+                  <td>Indicated Value $45/sf</td>
+                  <td id="subProjectSpread4"></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td id="compProjectSpread4"></td>
+                  <td id="avgSubjectProject4"></td>
+                  <td id="avgAllAreas4"></td>
+                </tr>
+                <tr>
+                  <td>Indicated Value $50/sf</td>
+                  <td id="subProjectSpread5"></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td id="compProjectSpread5"></td>
+                  <td id="avgSubjectProject5"></td>
+                  <td id="avgAllAreas5"></td>
+                </tr>
+                <tr>
+                  <td colspan="3">Value Spread Range</td>
+                  <td id="indicatedValueSubjectProject" colspan="3"></td>
+                  <td id="indicatedAllComps" colspan="3"></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td colspan="">Value Spread Ratio</td>
+                  <td id="indicatedRatioSubjectProject" colspan="3"></td>
+                  <td id="indicatedRatioComps" colspan="3"></td>
                 </tr>
               </MDBTableBody>
             </MDBTable>
-            <h3 className="mt-5 text-left"><strong>MDBTable head options</strong></h3>
-            <p>To change a background-color of thead (or any other element) use our color classes. If you are going to use a dark background you should also consider white text (to provide a proper contrast) by adding .text-white class.</p>
-            <MDBTable>
-              <MDBTableHead color="primary-color" textWhite>
-                <tr>
-                  <th>#</th>
-                  <th>First</th>
-                  <th>Last</th>
-                  <th>Handle</th>
-                </tr>
-              </MDBTableHead>
-              <MDBTableBody>
-                <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </MDBTableBody>
-            </MDBTable>
-            <MDBTable>
-              <MDBTableHead color="pink">
-                <tr>
-                  <th>#</th>
-                  <th>First</th>
-                  <th>Last</th>
-                  <th>Handle</th>
-                </tr>
-              </MDBTableHead>
-              <MDBTableBody>
-                <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </MDBTableBody>
-            </MDBTable>
-            <h3 className="mt-5 text-left"><strong>Striped rows.</strong></h3>
-            <p>Use prop striped to add zebra-striping to any table row within the table body</p>
-            <MDBTable striped>
-              <MDBTableHead>
-                <tr>
-                  <th>#</th>
-                  <th>First</th>
-                  <th>Last</th>
-                  <th>Handle</th>
-                </tr>
-              </MDBTableHead>
-              <MDBTableBody>
-                <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </MDBTableBody>
-            </MDBTable>
+            
           </MDBCardBody>
         </MDBCard>
       </MDBCol>
