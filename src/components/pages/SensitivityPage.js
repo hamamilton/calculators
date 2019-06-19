@@ -1,7 +1,7 @@
 import React from 'react'
 import { MDBRow, MDBCol, MDBView, MDBCardTitle, MDBCard, MDBCardBody, MDBTable, MDBTableHead, MDBTableBody, MDBInput, MDBMask, MDBCardText, MDBIcon } from 'mdbreact';
 
-const Sensitivity =  () => {
+const Sensitivity = () => {
   return (
     <>
     <MDBRow>
@@ -12,72 +12,12 @@ const Sensitivity =  () => {
         </MDBCol>
     </MDBRow>
     <MDBRow>
+      
       <MDBCol md="2">
-        <MDBCard className="mt-5">
+        <MDBCard className="mt-">
           <MDBCardBody>
             <MDBTable striped hover>
               <MDBTableHead color="secondary-color" textWhite>
-                <tr>
-                  <th>&nbsp;</th>
-                </tr>
-              </MDBTableHead>
-              <MDBTableBody>
-              <tr>
-                  <td>Sale Price<</td>
-                  
-                </tr>
-                <tr>
-                  <td>Size</td>
-                </tr>
-                <tr>
-                  <td>Price/SqFt</td>
-                </tr>
-                <tr>
-                  <td>Size Factor</td>
-                </tr>
-                <tr>
-                  <td>Factor %</td>
-                </tr>
-                <tr>
-                  <td>Size Adjustment</td>
-                </tr>
-                <tr>
-                  <td>Adjustment %</td>
-                </tr>
-
-                <tr>
-                  <td>Net Adjustment</td>
-                </tr>
-                
-                <tr>
-                  <td>Net %</td>
-                  
-                </tr>
-
-                <tr>
-                  <td>Gross Adjustment</td>
-                </tr>
-
-                <tr>
-                  <td>Gross %</td>
-                  
-                </tr>
-
-                <tr>
-                  <td>Indicated Value</td>
-                </tr>
-              </MDBTableBody>
-            </MDBTable>
-            
-          </MDBCardBody>
-          
-        </MDBCard>
-      </MDBCol>
-      <MDBCol md="2">
-        <MDBCard className="mt-5">
-          <MDBCardBody>
-            <MDBTable striped hover>
-              <MDBTableHead color="red" textWhite>
                 <tr>
                 <th>Subject</th>
                   </tr>
@@ -85,6 +25,9 @@ const Sensitivity =  () => {
               <MDBTableBody>
               <tr>
                   <td>
+                  <div className="input-group-prepend">
+                    <span className="input-group-text" id="addon-wrapping">@</span>
+                  </div>
                   <MDBInput 
                     name="subjSale"
                     type="number"
