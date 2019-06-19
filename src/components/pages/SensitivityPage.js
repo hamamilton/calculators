@@ -5,204 +5,841 @@ const Sensitivity =  () => {
   return (
     <>
     <MDBRow>
-      <MDBCol md="12">
-        <MDBCard className="mt-5">
+        <MDBCol md="12">
           <MDBView className="gradient-card-header blue darken-2">
             <h4 className="h4-responsive text-white">GLA Adjustment Sensitivity Analysis</h4>
           </MDBView>
+        </MDBCol>
+    </MDBRow>
+    <MDBRow>
+      <MDBCol md="2">
+        <MDBCard className="mt-5">
           <MDBCardBody>
-            <MDBInput
-              name="subjectContractPrice"
-              type="number"
-              label="Subject Contract Price"
-            />
             <MDBTable striped hover>
               <MDBTableHead color="secondary-color" textWhite>
                 <tr>
-                <th></th>
-                  <th>GLA</th>
-                  <th>Actual Sale Price
-                    </th>
-                  <th>Indicated Value $25/sf
-                    
-                    </th>
-                  <th>Indicated Value $30/sf
-                    
-                    </th>
-                  <th>Indicated Value $35/sf</th>
-                  <th>Indicated Value $40/sf
-                    
-                    </th>
-                  <th>Indicated Value $50/sf
-                    
-                    </th>
-                  
+                  <th>&nbsp;</th>
                 </tr>
               </MDBTableHead>
               <MDBTableBody>
               <tr>
-                  <td>Subject</td>
-                  <td>
-                  <MDBInput 
-                    name="subjGLA"
-                    type="number"
-                    label="Subject GLA"
-                    /></td>
-                  <td><MDBInput 
-                    name="comp1GLA"
-                    type="number"
-                    label="Comp 1 GLA"
-                    /></td>
-                  <td><MDBInput 
-                    name="comp2GLA"
-                    type="number"
-                    label="Comp 2 GLA"
-                    /></td>
-                  <td><MDBInput 
-                    name="comp3GLA"
-                    type="number"
-                    label="Comp 3 GLA"
-                    /></td>
-                    <td></td>
-                  <td><MDBInput 
-                    name="comp4GLA"
-                    type="number"
-                    label="Comp 4 GLA"
-                    /></td>
-                  <td><MDBInput 
-                    name="comp5GLA"
-                    type="number"
-                    label="Comp 5 GLA"
-                    /></td>
+                  <td>Sale Price<</td>
                   
                 </tr>
                 <tr>
-                  <td>Comp 1</td>
-                  <td><MDBInput 
-                    name="comp1GLA"
-                    type="number"
-                    label="Comp 1 GLA"
-                    /></td>
-                  <td><MDBInput
-                    name="comp1ActualSalePrice"
-                    type="number"
-                    label="Comp 1 Actual" /></td>
-                  <td><MDBInput
-                    name="comp2ActualSalePrice"
-                    type="number"
-                    label="Comp 2 Actual" /></td>
-                  <td><MDBInput
-                    name="comp3ActualSalePrice"
-                    type="number"
-                    label="Comp 3 Actual" /></td>
-                    <td></td>
-                  <td><MDBInput
-                    name="comp4ActualSalePrice"
-                    type="number"
-                    label="Comp 4 Actual" /></td>
-                  <td><MDBInput
-                    name="comp5ActualSalePrice"
-                    type="number"
-                    label="Comp 5 Actual" /></td>
-                  
+                  <td>Size</td>
                 </tr>
                 <tr>
-                  <td>Comp 2</td>
-                  <td id="subProjectSpread1"></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  
+                  <td>Price/SqFt</td>
                 </tr>
                 <tr>
-                  <td>Comp 3</td>
-                  <td id="subProjectSpread2"></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  
+                  <td>Size Factor</td>
                 </tr>
                 <tr>
-                  <td>Value Spread (Comps 1-3)</td>
-                  <td id="subProjectSpread3"></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  
+                  <td>Factor %</td>
                 </tr>
                 <tr>
-                  <td>Avg Sale Price Comps (1-3)</td>
-                  <td id="subProjectSpread4"></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  
+                  <td>Size Adjustment</td>
                 </tr>
                 <tr>
-                  <td>Comp 4</td>
-                  <td id="subProjectSpread5"></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  
+                  <td>Adjustment %</td>
                 </tr>
 
                 <tr>
-                  <td>Comp 5</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  
+                  <td>Net Adjustment</td>
                 </tr>
                 
                 <tr>
-                  <td>Indicated Value Spread (All Comps)</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>Net %</td>
                   
                 </tr>
 
                 <tr>
-                  <td>Avg All Areas</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>Gross Adjustment</td>
+                </tr>
+
+                <tr>
+                  <td>Gross %</td>
                   
+                </tr>
+
+                <tr>
+                  <td>Indicated Value</td>
                 </tr>
               </MDBTableBody>
             </MDBTable>
             
           </MDBCardBody>
+          
         </MDBCard>
       </MDBCol>
+      <MDBCol md="2">
+        <MDBCard className="mt-5">
+          <MDBCardBody>
+            <MDBTable striped hover>
+              <MDBTableHead color="red" textWhite>
+                <tr>
+                <th>Subject</th>
+                  </tr>
+              </MDBTableHead>
+              <MDBTableBody>
+              <tr>
+                  <td>
+                  <MDBInput 
+                    name="subjSale"
+                    type="number"
+                    label="Sale Price"
+                    /></td>
+                  </tr>
+                <tr>
+                  <td>
+                  <MDBInput 
+                    name="subjSize"
+                    type="number"
+                    label="Size"
+                    /></td>
+                </tr>
+                <tr>
+                  
+                  <td>
+                  <MDBInput 
+                    name="subjPriceSqFt"
+                    type="number"
+                    label="Price/SqFt"
+                    /></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  
+                </tr>
+                <tr>
+                  <td></td>
+                  
+                </tr>
+                <tr>
+                  <td></td>
+                  
+                </tr>
+                <tr>
+                  <td></td>
+                  
+                </tr>
+
+                <tr>
+                  <td></td>
+                  
+                </tr>
+                
+                <tr>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td></td>
+                </tr>
+              </MDBTableBody>
+            </MDBTable>
+            
+          </MDBCardBody>
+          
+        </MDBCard>
+      </MDBCol>
+      <MDBCol md="2">
+        <MDBCard className="mt-5">
+          <MDBCardBody>
+            <MDBTable striped hover>
+              <MDBTableHead color="primary-color" textWhite>
+                <tr>
+                <th>Comp 1</th>
+                  </tr>
+              </MDBTableHead>
+              <MDBTableBody>
+              <tr>
+                  <td>
+                  <MDBInput 
+                    name="Comp1Sale"
+                    type="number"
+                    label="Sale Price"
+                    /></td>
+                  </tr>
+                <tr>
+                  <td>
+                  <MDBInput 
+                    name="Comp1Size"
+                    type="number"
+                    label="Size"
+                    /></td>
+                </tr>
+                <tr>
+                  
+                  <td>
+                  <MDBInput 
+                    name="Comp1PriceSqFt"
+                    type="number"
+                    label="Price/SqFt"
+                    /></td>
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp1SizeFactor"
+                    type="number"
+                    label="Size Factor"
+                    /></td>
+                  
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp1FactorPer"
+                    type="number"
+                    label="Factor %"
+                    /></td>
+                  
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp1SizeAdj"
+                    type="number"
+                    label="Size Adjustment"
+                    /></td>
+                  
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp1AdjPer"
+                    type="number"
+                    label="Adjustment %"
+                    /></td>
+                  
+                </tr>
+
+                <tr>
+                  <td><MDBInput 
+                    name="Comp1NetAdj"
+                    type="number"
+                    label="Net Adjustment"
+                    /></td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><MDBInput 
+                    name="Comp1NetAdjPer"
+                    type="number"
+                    label="Net Adjustment %"
+                    /></td>
+                </tr>
+
+                <tr>
+                  <td><MDBInput 
+                    name="Comp1GrossAdj"
+                    type="number"
+                    label="Gross Adjustment"
+                    /></td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><MDBInput 
+                    name="Comp1GrossAdjPer"
+                    type="number"
+                    label="Gross Adjustment %"
+                    /></td>
+                </tr>
+
+                <tr>
+                  <td><MDBInput 
+                    name="Comp1IndValue"
+                    type="number"
+                    label="Indicated Value"
+                    /></td>
+                </tr>
+              </MDBTableBody>
+            </MDBTable>
+            
+          </MDBCardBody>
+          
+        </MDBCard>
+      </MDBCol>
+      <MDBCol md="2">
+        <MDBCard className="mt-5">
+          <MDBCardBody>
+            <MDBTable striped hover>
+              <MDBTableHead color="primary-color" textWhite>
+                <tr>
+                <th>Comp 2</th>
+                  </tr>
+              </MDBTableHead>
+              <MDBTableBody>
+              <tr>
+                  <td>
+                  <MDBInput 
+                    name="Comp2Sale"
+                    type="number"
+                    label="Sale Price"
+                    /></td>
+                  </tr>
+                <tr>
+                  <td>
+                  <MDBInput 
+                    name="Comp2Size"
+                    type="number"
+                    label="Size"
+                    /></td>
+                </tr>
+                <tr>
+                  
+                  <td>
+                  <MDBInput 
+                    name="Comp2PriceSqFt"
+                    type="number"
+                    label="Price/SqFt"
+                    /></td>
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp2SizeFactor"
+                    type="number"
+                    label="Size Factor"
+                    /></td>
+                  
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp2FactorPer"
+                    type="number"
+                    label="Factor %"
+                    /></td>
+                  
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp2SizeAdj"
+                    type="number"
+                    label="Size Adjustment"
+                    /></td>
+                  
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp2AdjPer"
+                    type="number"
+                    label="Adjustment %"
+                    /></td>
+                  
+                </tr>
+
+                <tr>
+                  <td><MDBInput 
+                    name="Comp2NetAdj"
+                    type="number"
+                    label="Net Adjustment"
+                    /></td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><MDBInput 
+                    name="Comp2NetAdjPer"
+                    type="number"
+                    label="Net Adjustment %"
+                    /></td>
+                </tr>
+
+                <tr>
+                  <td><MDBInput 
+                    name="Comp2GrossAdj"
+                    type="number"
+                    label="Gross Adjustment"
+                    /></td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><MDBInput 
+                    name="Comp2GrossAdjPer"
+                    type="number"
+                    label="Gross Adjustment %"
+                    /></td>
+                </tr>
+
+                <tr>
+                  <td><MDBInput 
+                    name="Comp2IndValue"
+                    type="number"
+                    label="Indicated Value"
+                    /></td>
+                </tr>
+              </MDBTableBody>
+            </MDBTable>
+            
+          </MDBCardBody>
+          
+        </MDBCard>
+        </MDBCol>
+        <MDBCol md="2">
+        <MDBCard className="mt-5">
+          <MDBCardBody>
+            <MDBTable striped hover>
+              <MDBTableHead color="primary-color" textWhite>
+                <tr>
+                <th>Comp 3</th>
+                  </tr>
+              </MDBTableHead>
+              <MDBTableBody>
+              <tr>
+                  <td>
+                  <MDBInput 
+                    name="Comp3Sale"
+                    type="number"
+                    label="Sale Price"
+                    /></td>
+                  </tr>
+                <tr>
+                  <td>
+                  <MDBInput 
+                    name="Comp3Size"
+                    type="number"
+                    label="Size"
+                    /></td>
+                </tr>
+                <tr>
+                  
+                  <td>
+                  <MDBInput 
+                    name="Comp3PriceSqFt"
+                    type="number"
+                    label="Price/SqFt"
+                    /></td>
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp3SizeFactor"
+                    type="number"
+                    label="Size Factor"
+                    /></td>
+                  
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp3FactorPer"
+                    type="number"
+                    label="Factor %"
+                    /></td>
+                  
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp3SizeAdj"
+                    type="number"
+                    label="Size Adjustment"
+                    /></td>
+                  
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp3AdjPer"
+                    type="number"
+                    label="Adjustment %"
+                    /></td>
+                  
+                </tr>
+
+                <tr>
+                  <td><MDBInput 
+                    name="Comp3NetAdj"
+                    type="number"
+                    label="Net Adjustment"
+                    /></td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><MDBInput 
+                    name="Comp3NetAdjPer"
+                    type="number"
+                    label="Net Adjustment %"
+                    /></td>
+                </tr>
+
+                <tr>
+                  <td><MDBInput 
+                    name="Comp3GrossAdj"
+                    type="number"
+                    label="Gross Adjustment"
+                    /></td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><MDBInput 
+                    name="Comp3GrossAdjPer"
+                    type="number"
+                    label="Gross Adjustment %"
+                    /></td>
+                </tr>
+
+                <tr>
+                  <td><MDBInput 
+                    name="Comp3IndValue"
+                    type="number"
+                    label="Indicated Value"
+                    /></td>
+                </tr>
+              </MDBTableBody>
+            </MDBTable>
+            
+          </MDBCardBody>
+          
+        </MDBCard>
+        </MDBCol>
+        <MDBCol md="2">
+        <MDBCard className="mt-5">
+          <MDBCardBody>
+            <MDBTable striped hover>
+              <MDBTableHead color="primary-color" textWhite>
+                <tr>
+                <th>Comp 4</th>
+                  </tr>
+              </MDBTableHead>
+              <MDBTableBody>
+              <tr>
+                  <td>
+                  <MDBInput 
+                    name="Comp4Sale"
+                    type="number"
+                    label="Sale Price"
+                    /></td>
+                  </tr>
+                <tr>
+                  <td>
+                  <MDBInput 
+                    name="Comp4Size"
+                    type="number"
+                    label="Size"
+                    /></td>
+                </tr>
+                <tr>
+                  
+                  <td>
+                  <MDBInput 
+                    name="Comp4PriceSqFt"
+                    type="number"
+                    label="Price/SqFt"
+                    /></td>
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp4SizeFactor"
+                    type="number"
+                    label="Size Factor"
+                    /></td>
+                  
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp4FactorPer"
+                    type="number"
+                    label="Factor %"
+                    /></td>
+                  
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp4SizeAdj"
+                    type="number"
+                    label="Size Adjustment"
+                    /></td>
+                  
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp4AdjPer"
+                    type="number"
+                    label="Adjustment %"
+                    /></td>
+                  
+                </tr>
+
+                <tr>
+                  <td><MDBInput 
+                    name="Comp4NetAdj"
+                    type="number"
+                    label="Net Adjustment"
+                    /></td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><MDBInput 
+                    name="Comp4NetAdjPer"
+                    type="number"
+                    label="Net Adjustment %"
+                    /></td>
+                </tr>
+
+                <tr>
+                  <td><MDBInput 
+                    name="Comp4GrossAdj"
+                    type="number"
+                    label="Gross Adjustment"
+                    /></td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><MDBInput 
+                    name="Comp4GrossAdjPer"
+                    type="number"
+                    label="Gross Adjustment %"
+                    /></td>
+                </tr>
+
+                <tr>
+                  <td><MDBInput 
+                    name="Comp4IndValue"
+                    type="number"
+                    label="Indicated Value"
+                    /></td>
+                </tr>
+              </MDBTableBody>
+            </MDBTable>
+            
+          </MDBCardBody>
+          
+        </MDBCard>
+        </MDBCol>
+        <MDBCol md="2">
+        <MDBCard className="mt-5">
+          <MDBCardBody>
+            <MDBTable striped hover>
+              <MDBTableHead color="primary-color" textWhite>
+                <tr>
+                <th>Comp 5</th>
+                  </tr>
+              </MDBTableHead>
+              <MDBTableBody>
+              <tr>
+                  <td>
+                  <MDBInput 
+                    name="Comp5Sale"
+                    type="number"
+                    label="Sale Price"
+                    /></td>
+                  </tr>
+                <tr>
+                  <td>
+                  <MDBInput 
+                    name="Comp5Size"
+                    type="number"
+                    label="Size"
+                    /></td>
+                </tr>
+                <tr>
+                  
+                  <td>
+                  <MDBInput 
+                    name="Comp5PriceSqFt"
+                    type="number"
+                    label="Price/SqFt"
+                    /></td>
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp5SizeFactor"
+                    type="number"
+                    label="Size Factor"
+                    /></td>
+                  
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp5FactorPer"
+                    type="number"
+                    label="Factor %"
+                    /></td>
+                  
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp5SizeAdj"
+                    type="number"
+                    label="Size Adjustment"
+                    /></td>
+                  
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp5AdjPer"
+                    type="number"
+                    label="Adjustment %"
+                    /></td>
+                  
+                </tr>
+
+                <tr>
+                  <td><MDBInput 
+                    name="Comp5NetAdj"
+                    type="number"
+                    label="Net Adjustment"
+                    /></td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><MDBInput 
+                    name="Comp5NetAdjPer"
+                    type="number"
+                    label="Net Adjustment %"
+                    /></td>
+                </tr>
+
+                <tr>
+                  <td><MDBInput 
+                    name="Comp5GrossAdj"
+                    type="number"
+                    label="Gross Adjustment"
+                    /></td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><MDBInput 
+                    name="Comp5GrossAdjPer"
+                    type="number"
+                    label="Gross Adjustment %"
+                    /></td>
+                </tr>
+
+                <tr>
+                  <td><MDBInput 
+                    name="Comp5IndValue"
+                    type="number"
+                    label="Indicated Value"
+                    /></td>
+                </tr>
+              </MDBTableBody>
+            </MDBTable>
+            
+          </MDBCardBody>
+          
+        </MDBCard>
+        </MDBCol>
+        <MDBCol md="2">
+        <MDBCard className="mt-5">
+          <MDBCardBody>
+            <MDBTable striped hover>
+              <MDBTableHead color="primary-color" textWhite>
+                <tr>
+                <th>Comp 6</th>
+                  </tr>
+              </MDBTableHead>
+              <MDBTableBody>
+              <tr>
+                  <td>
+                  <MDBInput 
+                    name="Comp6Sale"
+                    type="number"
+                    label="Sale Price"
+                    /></td>
+                  </tr>
+                <tr>
+                  <td>
+                  <MDBInput 
+                    name="Comp6Size"
+                    type="number"
+                    label="Size"
+                    /></td>
+                </tr>
+                <tr>
+                  
+                  <td>
+                  <MDBInput 
+                    name="Comp6PriceSqFt"
+                    type="number"
+                    label="Price/SqFt"
+                    /></td>
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp6SizeFactor"
+                    type="number"
+                    label="Size Factor"
+                    /></td>
+                  
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp6FactorPer"
+                    type="number"
+                    label="Factor %"
+                    /></td>
+                  
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp6SizeAdj"
+                    type="number"
+                    label="Size Adjustment"
+                    /></td>
+                  
+                </tr>
+                <tr>
+                  <td><MDBInput 
+                    name="Comp6AdjPer"
+                    type="number"
+                    label="Adjustment %"
+                    /></td>
+                  
+                </tr>
+
+                <tr>
+                  <td><MDBInput 
+                    name="Comp6NetAdj"
+                    type="number"
+                    label="Net Adjustment"
+                    /></td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><MDBInput 
+                    name="Comp6NetAdjPer"
+                    type="number"
+                    label="Net Adjustment %"
+                    /></td>
+                </tr>
+
+                <tr>
+                  <td><MDBInput 
+                    name="Comp6GrossAdj"
+                    type="number"
+                    label="Gross Adjustment"
+                    /></td>
+                  
+                </tr>
+                
+                <tr>
+                  <td><MDBInput 
+                    name="Comp6GrossAdjPer"
+                    type="number"
+                    label="Gross Adjustment %"
+                    /></td>
+                </tr>
+
+                <tr>
+                  <td><MDBInput 
+                    name="Comp6IndValue"
+                    type="number"
+                    label="Indicated Value"
+                    /></td>
+                </tr>
+              </MDBTableBody>
+            </MDBTable>
+            
+          </MDBCardBody>
+          
+        </MDBCard>
+        </MDBCol>
     </MDBRow>
     </>
   )
