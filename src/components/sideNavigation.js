@@ -41,7 +41,7 @@ const TopNavigation = () => {
                     </MDBListGroupItem>
                 </NavLink>
 
-                <NavLink to="/AdjustmentCosts" activeClassName="activeClass">
+                <NavLink to="/adjustmentcosts" activeClassName="activeClass">
                     <MDBListGroupItem>
                         <MDBIcon icon="exclamation" className="mr-3"/>
                         Adjustment from Cost

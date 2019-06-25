@@ -17,7 +17,7 @@ class Routes extends React.Component {
         <Route path='/tables' component={TablesPage} />
         <Route path='/sensitivity' component={Sensitivity} />
         <Route path='/404' component={NotFoundPage} />
-        <Route path='/AdjustmentCosts' component={AdjustmentCost} />
+        <Route path='/adjustmentcosts' component={AdjustmentCosts} />
       </Switch>
     );
   }
