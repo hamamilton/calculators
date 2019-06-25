@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import "./DataTable.css";
-import Fa from '../Fa';
+//import Fa from '../Fa';
 
 class TableEditable extends React.Component {
   state = {
