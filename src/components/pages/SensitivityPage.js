@@ -5,7 +5,7 @@ const Sensitivity = () => {
   return (
     <>
     <MDBRow>
-        <MDBCol md="12">
+        <MDBCol md="1">
           <MDBView className="gradient-card-header blue darken-2">
             <h4 className="h4-responsive text-white">GLA Adjustment Sensitivity Analysis</h4>
           </MDBView>
